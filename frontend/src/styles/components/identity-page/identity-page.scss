@@ -1,0 +1,45 @@
+.identity-page {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: $padding-l 0;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        min-width: 550px;
+        background-color: white;
+        border-radius: 5px;
+
+        box-shadow: $shadow-outer;
+
+        .form-container {
+            padding: $padding-s $padding-l;
+        }
+    }
+}
+
+@media (max-width: $break-s) {
+    .identity-page__container {
+        min-width: 90vw;
+
+        .form-container {
+            padding: $padding-s $padding-m;
+        }
+    }
+}
+
+@media (max-width: $break-xs) {
+    .identity-page__container {
+        min-width: 90vw;
+
+        .form-container {
+            padding: $padding-s $padding-s;
+        }
+    }
+}
+
+@import './toggle-bar.scss';
+@import './form.scss';

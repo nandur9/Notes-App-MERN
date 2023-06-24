@@ -1,0 +1,229 @@
+
+.side-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: $header-height;
+    width: 21vw;
+    height: 100vh;
+    overflow: hidden;
+    transition: width .5s;
+    border-right: 1px solid rgba($color-light, .2);
+    z-index: 10;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &.hidden {
+        width: $tags-width + 0.3;
+    }
+
+    * {
+        white-space: nowrap;
+    }
+
+    &__item {
+        display: flex;
+        height: $tags-height;
+        margin: 5px 0;
+        transition: .2s;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+        align-items: center;
+
+        * {
+            letter-spacing: 1px;
+            color: $color-main;
+            font-size: $base-fz * 1.1;
+        }
+
+        &:nth-child(1) {
+            margin-top: 0;
+        }
+
+        &:nth-last-child(1) {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            background-color: rgba($color-light, .1);
+
+            .side-bar__item-icon {
+
+                i {
+                    color: $color-main;
+                }
+            }
+        }
+
+        &.active {
+            background-color: rgba($color-light, .1);
+
+            .side-bar__item-icon {
+
+                i {
+                    color: $color-main;
+                }
+            }
+        }
+
+        &-icon {
+            width: $tags-width;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            i {
+                color: $color-light;
+                transition: .15s;
+                font-size: $base-fz * 1.15;
+            }
+
+            .fa-plus {
+                font-size: $base-fz * 1.75;
+            }
+        }
+
+        &-text {
+            position: absolute;
+            left: $tags-width + 0.25;
+        }
+    }
+
+    .tags {
+        height: auto;
+        margin-top: $margin-s;
+
+        &__list {
+            max-height: ($tags-height + 5px) * 7;
+            transition: all .2s;
+            overflow-y: auto;
+
+            &.hide-scroll {
+                overflow: hidden;
+            }
+
+            &::-webkit-scrollbar {
+                width: 17px;
+    
+                &-track {   
+                    background-color: rgba($color-light, 0);
+                }
+    
+                &-thumb {
+                    background-color: rgba($color-light, .2);
+                    cursor: pointer;
+                    border-radius: 3px;
+                    border-right: 3px solid white;
+    
+                    &:hover {
+                        background-color: rgba($color-light, .3);
+                    }
+                }
+            }
+        }
+    }
+
+    .sidebar__controls {
+        margin-bottom: $margin-s;
+    }
+}
+
+@media (max-width: $break-xl) {
+        
+    .side-bar {
+        width: 26vw;
+
+        &.hidden {
+            width: $tags-width-xl + 0.3;
+        }
+
+        &__item-icon {
+            width: $tags-width-xl;
+        }
+
+        &__item-text {
+            left: $tags-width-xl + 0.25;
+        }
+    }
+}
+
+@media (max-width: $break-l) {
+        
+    .side-bar {
+        width: 40vw;
+        box-shadow: 5px 0px 25px 0px rgba(39, 40, 40, 0.3);
+
+        &.hidden {
+            width: $tags-width-l + 0.3;
+            box-shadow: none;
+        }
+
+        &__item-icon {
+            width: $tags-width-l;
+        }
+
+        &__item-text {
+            left: $tags-width-l + 0.25;
+        }
+    }
+}
+
+@media (max-width: $break-m) {
+        
+    .side-bar {
+        width: 50vw;
+
+        &.hidden {
+            width: $tags-width-m + 0.3;
+        }
+
+        &__item-icon {
+            width: $tags-width-m;
+        }
+
+        &__item-text {
+            left: $tags-width-m + 0.25;
+        }
+    }
+}
+
+@media (max-width: $break-s) {
+        
+    .side-bar {
+        width: 60vw;
+
+        &.hidden {
+            width: $tags-width-s + 0.3;
+        }
+
+        &__item-icon {
+            width: $tags-width-s;
+        }
+
+        &__item-text {
+            left: $tags-width-s + 0.25;
+        }
+    }
+}
+
+@media (max-width: $break-xs) {
+        
+    .side-bar {
+        width: 75vw;
+
+        &.hidden {
+            width: $tags-width-xs + 0.3;
+        }
+
+        &__item-icon {
+            width: $tags-width-xs;
+        }
+
+        &__item-text {
+            left: $tags-width-xs + 0.25;
+        }
+    }
+}

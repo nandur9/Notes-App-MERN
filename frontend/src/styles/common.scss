@@ -1,0 +1,74 @@
+@import './normalize.scss';
+@import './fonts.scss';
+@import './vars.scss';
+
+* {
+   box-sizing: border-box; 
+   @include main-font;
+
+   &::-webkit-scrollbar {
+        width: 15px;
+
+        &-thumb {
+            background-color: rgba($color-light, .3);
+            cursor: pointer;
+            border-radius: 3px;
+
+            &:hover {
+                background-color: rgba($color-light, .45);
+            }
+        }
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-size: $base-fz;
+    color: $color-main;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    
+}
+
+input {
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid $color-main;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+button {
+    background-color: $color-main;
+    color: white;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background-color: none;
+    outline: none;
+}
+
+@import './components/all.scss'
+
